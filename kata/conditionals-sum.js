@@ -1,27 +1,26 @@
 const conditionalSum = function(values, condition) {
-  const reducer = (accumulator, currentValue) => accumulator + currentValue;
-   let evenArr = 0;
-   let oddArr = 0;
-  
+  let sum = 0;
+ 
   if (condition === 'even') {
-    for (i = 0; i < values.length; i++){
-      if (i % 2 === 0) {
-       evenArr += i;
-       console.log(evenArr)
+    for (let i = 0; i <= values.length; i++){
+      if (values[i] % 2 === 0) {
+       sum += values[i];
       }
     }  
-  } else if (condition === "odd"){
-    for (i = 0; i < values.length; i++){
-      if (i % 2 !== 0) {
-       oddArr += i;
-       console.log(oddArr);
+  }
+  if (condition === "odd") {
+    for (let j = 0; j <= values.length; j++){
+      if (values[j] % 2 === 1) {
+       sum += values[j];
+        // console.log(sum);
       }
     }
-  } else {
-      for (i = 0; i < values.length; i++){
-       return i;
-      }
-  }
- 
-
+  } 
+  
+  return sum;
+};
+  
 console.log(conditionalSum([1, 2, 3, 4, 5], "even"))
+console.log(conditionalSum([1, 2, 3, 4, 5], "odd"));
+console.log(conditionalSum([13, 88, 12, 44, 99], "even"));
+console.log(conditionalSum([], "odd"));
